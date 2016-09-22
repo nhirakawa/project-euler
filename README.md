@@ -1,6 +1,8 @@
 # project-euler
 Project Euler problems in Java and Scala
 
+The solutions are not meant to be as efficient as possible, though the performance goal is less than 1 second.
+
 ## Solved
 - 1
 - 2
