@@ -9,6 +9,7 @@ The solutions are not meant to be as (mathematically) efficient as possible, tho
 - 3
 - 4
 - 5
+- 6
 
 ## In Progress
 

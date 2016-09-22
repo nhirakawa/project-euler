@@ -56,4 +56,8 @@ public class MathUtils {
     return factors;
   }
 
+  public static long square(long num) {
+    return (long) Math.pow(num, 2);
+  }
+
 }
