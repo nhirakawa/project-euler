@@ -1,7 +1,9 @@
 package com.github.nhirakawa.problems;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 public class MathUtils {
 
@@ -10,14 +12,48 @@ public class MathUtils {
   private MathUtils() {
   }
 
-  public static long fibonacci(long i) {
-    if (i < 1) {
-      throw new IllegalArgumentException(String.format("%d is less than 1", i));
+  public static long fibonacci(long n) {
+    if (n < 1) {
+      throw new IllegalArgumentException(String.format("%d is less than 1", n));
     }
-    if (i == 1 || i == 2) {
-      return i;
+    if (n == 1 || n == 2) {
+      return n;
     }
-    return FIBONACCI_MEMO.computeIfAbsent(i, integer -> fibonacci(i - 1) + fibonacci(i - 2));
+    return FIBONACCI_MEMO.computeIfAbsent(n, integer -> fibonacci(n - 1) + fibonacci(n - 2));
+  }
+
+  public static boolean isPrime(long n) {
+    if (n < 1) {
+      throw new IllegalArgumentException(String.format("%d is less than 1", n));
+    }
+
+    if (n == 1) {
+      return true;
+    }
+
+    for (long l = 2; l < Math.ceil(Math.sqrt(n)); l++) {
+      if (n % l == 0) {
+        return false;
+      }
+    }
+
+    return true;
+  }
+
+  public static Set<Long> getFactors(long n) {
+    if (n < 1) {
+      throw new IllegalArgumentException(String.format("%d is less than 1", n));
+    }
+
+    Set<Long> factors = new HashSet<>();
+
+    for (long l = 1; l < Math.ceil(Math.sqrt(n)); l++) {
+      if (n % l == 0) {
+        factors.add(l);
+        factors.add(n / l);
+      }
+    }
+    return factors;
   }
 
 }
