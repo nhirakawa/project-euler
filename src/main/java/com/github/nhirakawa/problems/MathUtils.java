@@ -27,11 +27,14 @@ public class MathUtils {
       throw new IllegalArgumentException(String.format("%d is less than 1", n));
     }
 
-    if (n == 1) {
+    if (n == 1 || n == 2) {
       return true;
     }
+    if (n % 2 == 0) {
+      return false;
+    }
 
-    for (long l = 2; l < Math.ceil(Math.sqrt(n)); l++) {
+    for (long l = 3; l * l <= n; l += 2) {
       if (n % l == 0) {
         return false;
       }
