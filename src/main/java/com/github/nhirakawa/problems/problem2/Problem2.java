@@ -1,5 +1,7 @@
 package com.github.nhirakawa.problems.problem2;
 
+import static com.github.nhirakawa.problems.MathUtils.fibonacci;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -26,16 +28,6 @@ public class Problem2 implements Problem {
       }
     }
     return new Answer(sum);
-  }
-
-  public long fibonacci(int i) {
-    if (i < 1) {
-      throw new IllegalArgumentException(String.format("%d is less than 1", i));
-    }
-    if (i == 1 || i == 2) {
-      return i;
-    }
-    return memo.computeIfAbsent(i, integer -> fibonacci(i - 1) + fibonacci(i - 2));
   }
 
 }
