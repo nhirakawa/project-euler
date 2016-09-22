@@ -28,16 +28,27 @@ public class ProblemRunner {
     for (String classArg : injectables.keySet()) {
       options.addOption(classArg, false, classArg);
     }
+    options.addOption("all", false, "all problems");
 
     CommandLineParser parser = new DefaultParser();
     CommandLine commandLine = parser.parse(options, args);
 
     Optional<Key<? extends Problem>> key = Optional.empty();
+    boolean all = false;
     for (Option option : commandLine.getOptions()) {
+      if (option.getOpt().equals("all")) {
+        all = true;
+        break;
+      }
       if (injectables.containsKey(option.getOpt())) {
         key = Optional.ofNullable(injectables.get(option.getOpt()));
         break;
       }
+    }
+
+    if (all) {
+      injectables.values().forEach(ProblemRunner::doProblem);
+      return;
     }
 
     if (!key.isPresent()) {
@@ -45,8 +56,11 @@ public class ProblemRunner {
       helpFormatter.printHelp(200, getClass().getName(), null, options, null);
       System.exit(1);
     }
+    doProblem(key.get());
+  }
 
-    Problem problem = Guice.createInjector(new ProjectEulerModule()).getInstance(key.get());
+  private static void doProblem(Key<? extends Problem> key) {
+    Problem problem = Guice.createInjector(new ProjectEulerModule()).getInstance(key);
     String problemName = problem.getClass().getSimpleName();
     long start = System.currentTimeMillis();
     Answer answer = problem.solve();
