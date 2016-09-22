@@ -47,7 +47,11 @@ public class ProblemRunner {
     }
 
     Problem problem = Guice.createInjector(new ProjectEulerModule()).getInstance(key.get());
-    System.out.printf("%s=%d%n", problem.getClass().getSimpleName(), problem.solve().get());
+    String problemName = problem.getClass().getSimpleName();
+    long start = System.currentTimeMillis();
+    Answer answer = problem.solve();
+    long end = System.currentTimeMillis();
+    System.out.printf("Solved %s in %d ms [%d]%n", problemName, end - start, answer.get());
   }
 
   private static Map<String, Key<? extends Problem>> getInjectables() {
