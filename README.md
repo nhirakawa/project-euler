@@ -3,6 +3,8 @@ Project Euler problems in Java and Scala
 
 ## Solved
 - 1
+- 2
+- 3
 
 ## In Progress
 
