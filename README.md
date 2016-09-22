@@ -16,6 +16,6 @@ java -jar ./target/project-euler-1.0-SNAPSHOT.jar -{problem name}
 
 ### Example
 ```
-java -jar ./target/project-euler-1.0-SNAPSHOT.jar -problem1
+java -jar ./target/project-euler-1.0-SNAPSHOT.jar -problem3
 Solved Problem3 in 37 ms [6857]
 ```
