@@ -5,6 +5,7 @@ Project Euler problems in Java and Scala
 - 1
 - 2
 - 3
+- 4
 
 ## In Progress
 
