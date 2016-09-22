@@ -5,12 +5,12 @@ import java.util.Map;
 
 public class MathUtils {
 
-  private static final Map<Integer, Long> FIBONACCI_MEMO = new HashMap<>();
+  private static final Map<Long, Long> FIBONACCI_MEMO = new HashMap<>();
 
   private MathUtils() {
   }
 
-  public static long fibonacci(int i) {
+  public static long fibonacci(long i) {
     if (i < 1) {
       throw new IllegalArgumentException(String.format("%d is less than 1", i));
     }
