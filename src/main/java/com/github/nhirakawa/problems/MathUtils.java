@@ -50,7 +50,7 @@ public class MathUtils {
 
     Set<Long> factors = new HashSet<>();
 
-    for (long l = 1; l < Math.ceil(Math.sqrt(n)); l++) {
+    for (long l = 1; l * l <= n; l++) {
       if (n % l == 0) {
         factors.add(l);
         factors.add(n / l);
