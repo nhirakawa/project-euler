@@ -105,7 +105,6 @@ public class ProblemTest {
   }
 
   @Test
-  @Ignore
   public void testProblem21() {
     testProblem(new Problem21(), new Answer<>(31626L));
   }

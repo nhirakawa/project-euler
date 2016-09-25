@@ -5,6 +5,7 @@ import static com.github.nhirakawa.MathUtils.sum;
 
 import java.util.Collection;
 import java.util.Set;
+import java.util.TreeSet;
 
 import com.github.nhirakawa.Answer;
 import com.github.nhirakawa.Problem;
@@ -15,19 +16,30 @@ public class Problem21 extends Problem {
 
   @Override
   public Answer solve() {
-    Multimap<Long, Long> amicableNumbers = HashMultimap.create();
-    for (long l = 2; l < 10001; l++) {
-      amicableNumbers.put(sum(getProperDivisors(l)), l);
+    Multimap<Long, Long> properDivisorSums = HashMultimap.create();
+    for (long l = 2; l < 10000; l++) {
+      long sum = sum(getProperDivisors(l));
+      if (sum > 1) {
+        properDivisorSums.put(sum, l);
+      }
     }
-    amicableNumbers.removeAll(0L);
-    amicableNumbers.removeAll(1L);
-    long result = amicableNumbers.asMap().values().stream().filter(c -> c.size() > 1).flatMap(Collection::stream).reduce((a, b) -> a + b).get();
-    return new Answer<>(result);
+
+    Set<Long> amicableNumbers = new TreeSet<>();
+    for (long l = 2; l < 10000; l++) {
+      if(properDivisorSums.containsKey(l)){
+        for(long possibleAmicable : properDivisorSums.get(l)){
+          if(l != possibleAmicable && properDivisorSums.get(possibleAmicable).contains(l)){
+            amicableNumbers.add(l);
+            amicableNumbers.add(possibleAmicable);
+          }
+        }
+      }
+    }
+    return new Answer<>(sum(amicableNumbers));
   }
 
   private static Collection<Long> getProperDivisors(long l) {
     Set<Long> factors = getFactors(l);
-    factors.remove(1L);
     factors.remove(l);
     return factors;
   }
