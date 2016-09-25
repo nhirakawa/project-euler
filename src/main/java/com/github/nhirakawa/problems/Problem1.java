@@ -1,4 +1,4 @@
-package com.github.nhirakawa.problems.problem1;
+package com.github.nhirakawa.problems;
 
 import java.util.stream.IntStream;
 

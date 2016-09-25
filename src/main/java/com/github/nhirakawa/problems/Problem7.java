@@ -1,4 +1,4 @@
-package com.github.nhirakawa.problems.problem7;
+package com.github.nhirakawa.problems;
 
 import static com.github.nhirakawa.problems.MathUtils.isPrime;
 

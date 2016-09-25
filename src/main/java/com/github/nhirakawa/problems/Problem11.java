@@ -1,4 +1,4 @@
-package com.github.nhirakawa.problems.problem11;
+package com.github.nhirakawa.problems;
 
 import static com.github.nhirakawa.problems.MathUtils.max;
 import static com.github.nhirakawa.problems.MathUtils.product;

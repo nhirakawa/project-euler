@@ -1,4 +1,4 @@
-package com.github.nhirakawa.problems.problem3;
+package com.github.nhirakawa.problems;
 
 import static com.github.nhirakawa.problems.MathUtils.getFactors;
 

@@ -1,4 +1,4 @@
-package com.github.nhirakawa.problems.problem8;
+package com.github.nhirakawa.problems;
 
 import static java.lang.Math.max;
 

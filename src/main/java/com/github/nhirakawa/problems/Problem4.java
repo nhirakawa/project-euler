@@ -1,4 +1,4 @@
-package com.github.nhirakawa.problems.problem4;
+package com.github.nhirakawa.problems;
 
 import com.github.nhirakawa.Answer;
 import com.github.nhirakawa.Problem;

@@ -1,4 +1,4 @@
-package com.github.nhirakawa.problems.problem2;
+package com.github.nhirakawa.problems;
 
 import static com.github.nhirakawa.problems.MathUtils.fibonacci;
 

@@ -1,4 +1,4 @@
-package com.github.nhirakawa.problems.problem13;
+package com.github.nhirakawa.problems;
 
 import java.math.BigInteger;
 

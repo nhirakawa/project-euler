@@ -1,10 +1,9 @@
-package com.github.nhirakawa.problems.problem5;
+package com.github.nhirakawa.problems;
 
 import java.util.stream.IntStream;
 
 import com.github.nhirakawa.Answer;
 import com.github.nhirakawa.Problem;
-import com.github.nhirakawa.problems.MathUtils;
 
 public class Problem5 extends Problem {
 

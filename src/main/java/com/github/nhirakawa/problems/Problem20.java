@@ -1,4 +1,4 @@
-package com.github.nhirakawa.problems.problem20;
+package com.github.nhirakawa.problems;
 
 import java.math.BigInteger;
 import java.util.stream.Stream;
