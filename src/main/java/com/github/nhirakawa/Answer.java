@@ -1,5 +1,7 @@
 package com.github.nhirakawa;
 
+import java.util.Objects;
+
 import com.google.common.base.MoreObjects;
 
 public class Answer<T> {
@@ -20,5 +22,19 @@ public class Answer<T> {
         .add("type", value.getClass().getCanonicalName())
         .add("value", value)
         .toString();
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(value);
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (!(o instanceof Answer)) {
+      return false;
+    }
+    Answer<?> answer = (Answer<?>) o;
+    return this.value.equals(answer.value);
   }
 }
