@@ -22,7 +22,7 @@ public class Problem21 extends Problem {
     amicableNumbers.removeAll(0L);
     amicableNumbers.removeAll(1L);
     long result = amicableNumbers.asMap().values().stream().filter(c -> c.size() > 1).flatMap(Collection::stream).reduce((a, b) -> a + b).get();
-    return new Answer(result);
+    return new Answer<>(result);
   }
 
   private static Collection<Long> getProperDivisors(long l) {

@@ -14,6 +14,6 @@ public class Problem13 extends Problem {
       sum = sum.add(new BigInteger(number));
     }
     String prefix = sum.toString().substring(0, 10);
-    return new Answer(Long.parseLong(prefix));
+    return new Answer<>(prefix);
   }
 }

@@ -14,7 +14,7 @@ public class Problem5 extends Problem {
     while (!isDivisible(num)) {
       num++;
     }
-    return new Answer(num);
+    return new Answer<>(num);
   }
 
   private static boolean isDivisible(int num) {

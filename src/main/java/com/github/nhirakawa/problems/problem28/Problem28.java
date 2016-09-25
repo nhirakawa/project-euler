@@ -13,7 +13,7 @@ public class Problem28 extends Problem {
     for (long level = 2; level < 1001; level += 2) {
       sum += getCornersSum(level);
     }
-    return new Answer(sum);
+    return new Answer<>(sum);
   }
 
   private static long getMaxCorner(long level) {

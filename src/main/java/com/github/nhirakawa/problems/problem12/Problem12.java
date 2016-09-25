@@ -15,7 +15,7 @@ public class Problem12 extends Problem {
       index++;
       triangle += index;
     }
-    return new Answer(triangle);
+    return new Answer<>(triangle);
   }
 
 }

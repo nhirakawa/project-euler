@@ -17,7 +17,7 @@ public class Problem7 extends Problem {
         index += 1;
       }
     }
-    return new Answer(lastPrime);
+    return new Answer<>(lastPrime);
   }
 
 }

@@ -27,7 +27,7 @@ public class Problem2 extends Problem {
         sum += fib;
       }
     }
-    return new Answer(sum);
+    return new Answer<>(sum);
   }
 
 }

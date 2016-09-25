@@ -25,7 +25,7 @@ public class Problem8 extends Problem {
     for (int i = 0; i < number.size() - LENGTH; i++) {
       maxProduct = max(maxProduct, product(number.subList(i, i + LENGTH)));
     }
-    return new Answer(maxProduct);
+    return new Answer<>(maxProduct);
   }
 
   public long product(List<String> digits) {

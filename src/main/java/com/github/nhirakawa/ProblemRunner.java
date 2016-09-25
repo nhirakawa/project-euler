@@ -65,7 +65,7 @@ public class ProblemRunner {
     long start = System.currentTimeMillis();
     Answer answer = problem.solve();
     long end = System.currentTimeMillis();
-    System.out.printf("Solved %s in %d ms [%d]%n", problemName, end - start, answer.get());
+    System.out.printf("Solved %s in %d ms [%s]%n", problemName, end - start, answer.get());
   }
 
   private static Map<String, Key<? extends Problem>> getInjectables() {

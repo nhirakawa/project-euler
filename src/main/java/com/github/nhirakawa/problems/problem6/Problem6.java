@@ -11,7 +11,7 @@ public class Problem6 extends Problem {
   @Override
   public Answer solve() {
     long difference = Math.abs(sumOfSquares(LongStream.range(1, 101)) - squareOfSum(LongStream.range(1, 101)));
-    return new Answer(difference);
+    return new Answer<>(difference);
   }
 
   private static long squareOfSum(LongStream numbers) {

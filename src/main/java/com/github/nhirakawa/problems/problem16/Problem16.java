@@ -11,7 +11,7 @@ public class Problem16 extends Problem {
   @Override
   public Answer solve() {
     long result = Stream.of(BigInteger.ONE.add(BigInteger.ONE).pow(1000).toString().split("")).mapToLong(Long::parseLong).sum();
-    return new Answer(result);
+    return new Answer<>(result);
   }
 
 }

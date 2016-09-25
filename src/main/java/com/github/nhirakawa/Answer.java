@@ -1,19 +1,24 @@
 package com.github.nhirakawa;
 
-public class Answer {
+import com.google.common.base.MoreObjects;
 
-  private final long value;
+public class Answer<T> {
 
-  public Answer(long value) {
+  private final T value;
+
+  public Answer(T value) {
     this.value = value;
   }
 
-  public long get() {
+  public T get() {
     return value;
   }
 
   @Override
   public String toString() {
-    return Long.toString(value);
+    return MoreObjects.toStringHelper(getClass())
+        .add("type", value.getClass().getCanonicalName())
+        .add("value", value)
+        .toString();
   }
 }

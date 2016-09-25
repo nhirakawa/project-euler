@@ -15,7 +15,7 @@ public class Problem3 extends Problem {
     long constant = 600851475143L;
     Optional<Long> result = getFactors(constant).stream().filter(f -> f != 1 && f != constant).filter(MathUtils::isPrime).max(Long::compare);
     if (result.isPresent()) {
-      return new Answer(result.get());
+      return new Answer<>(result.get());
     }
     return null;
   }

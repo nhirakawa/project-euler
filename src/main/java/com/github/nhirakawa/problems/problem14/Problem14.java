@@ -16,7 +16,7 @@ public class Problem14 extends Problem {
         num = i;
       }
     }
-    return new Answer(num);
+    return new Answer<>(num);
   }
 
   private static long collatzLength(long l) {

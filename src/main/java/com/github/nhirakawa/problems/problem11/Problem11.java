@@ -43,7 +43,7 @@ public class Problem11 extends Problem {
         maxProduct = max(product(horizontal), product(vertical), product(diagonal));
       }
     }
-    return new Answer(maxProduct);
+    return new Answer<>(maxProduct);
   }
 
 }

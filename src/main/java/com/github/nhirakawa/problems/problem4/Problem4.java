@@ -16,7 +16,7 @@ public class Problem4 extends Problem {
         }
       }
     }
-    return new Answer(result);
+    return new Answer<>(result);
   }
 
   private static boolean isPalindrome(long n) {
