@@ -14,6 +14,7 @@ The solutions are not meant to be as (mathematically) efficient as possible, tho
 - 8
 - 10
 - 12
+- 13
 - 14
 - 16
 - 28
