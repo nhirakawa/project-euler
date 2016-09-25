@@ -102,6 +102,11 @@ public class ProblemTest {
     testProblem(new Problem28(), new Answer<>(669171001L));
   }
 
+  @Test
+  public void testProblem67() {
+    testProblem(new Problem67(), new Answer<>(7273L));
+  }
+
   private static void testProblem(Problem problem, Answer<?> answer) {
     assertThat(problem.solve()).isEqualTo(answer);
   }
