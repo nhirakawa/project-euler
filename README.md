@@ -18,6 +18,7 @@ The solutions are not meant to be as (mathematically) efficient as possible, tho
 - 28
 
 ## In Progress
+- 11
 
 ## How to run
 ```
