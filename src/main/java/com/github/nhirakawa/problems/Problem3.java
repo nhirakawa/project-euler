@@ -1,12 +1,12 @@
 package com.github.nhirakawa.problems;
 
-import static com.github.nhirakawa.problems.MathUtils.getFactors;
+import static com.github.nhirakawa.MathUtils.getFactors;
 
 import java.util.Optional;
 
 import com.github.nhirakawa.Answer;
 import com.github.nhirakawa.Problem;
-import com.github.nhirakawa.problems.MathUtils;
+import com.github.nhirakawa.MathUtils;
 
 public class Problem3 extends Problem {
 

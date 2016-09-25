@@ -1,6 +1,6 @@
 package com.github.nhirakawa.problems;
 
-import static com.github.nhirakawa.problems.MathUtils.max;
+import static com.github.nhirakawa.MathUtils.max;
 
 import java.util.List;
 import java.util.stream.Collectors;

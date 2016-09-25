@@ -1,6 +1,6 @@
 package com.github.nhirakawa.problems;
 
-import static com.github.nhirakawa.problems.MathUtils.isPrime;
+import static com.github.nhirakawa.MathUtils.isPrime;
 
 import com.github.nhirakawa.Answer;
 import com.github.nhirakawa.Problem;

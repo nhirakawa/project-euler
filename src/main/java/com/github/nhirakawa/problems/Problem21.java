@@ -1,7 +1,7 @@
 package com.github.nhirakawa.problems;
 
-import static com.github.nhirakawa.problems.MathUtils.getFactors;
-import static com.github.nhirakawa.problems.MathUtils.sum;
+import static com.github.nhirakawa.MathUtils.getFactors;
+import static com.github.nhirakawa.MathUtils.sum;
 
 import java.util.Collection;
 import java.util.Set;

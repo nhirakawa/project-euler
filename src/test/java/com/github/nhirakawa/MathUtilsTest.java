@@ -1,12 +1,12 @@
 package com.github.nhirakawa;
 
-import static com.github.nhirakawa.problems.MathUtils.fibonacci;
-import static com.github.nhirakawa.problems.MathUtils.getFactors;
-import static com.github.nhirakawa.problems.MathUtils.isPrime;
-import static com.github.nhirakawa.problems.MathUtils.max;
-import static com.github.nhirakawa.problems.MathUtils.product;
-import static com.github.nhirakawa.problems.MathUtils.square;
-import static com.github.nhirakawa.problems.MathUtils.sum;
+import static com.github.nhirakawa.MathUtils.fibonacci;
+import static com.github.nhirakawa.MathUtils.getFactors;
+import static com.github.nhirakawa.MathUtils.isPrime;
+import static com.github.nhirakawa.MathUtils.max;
+import static com.github.nhirakawa.MathUtils.product;
+import static com.github.nhirakawa.MathUtils.square;
+import static com.github.nhirakawa.MathUtils.sum;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertFalse;
 

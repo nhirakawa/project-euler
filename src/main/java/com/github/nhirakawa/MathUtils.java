@@ -1,4 +1,4 @@
-package com.github.nhirakawa.problems;
+package com.github.nhirakawa;
 
 import java.math.BigInteger;
 import java.util.Collection;

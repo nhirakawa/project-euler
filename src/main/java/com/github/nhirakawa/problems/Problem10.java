@@ -3,6 +3,7 @@ package com.github.nhirakawa.problems;
 import java.util.stream.LongStream;
 
 import com.github.nhirakawa.Answer;
+import com.github.nhirakawa.MathUtils;
 import com.github.nhirakawa.Problem;
 
 public class Problem10 extends Problem {

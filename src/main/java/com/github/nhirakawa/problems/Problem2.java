@@ -1,6 +1,6 @@
 package com.github.nhirakawa.problems;
 
-import static com.github.nhirakawa.problems.MathUtils.fibonacci;
+import static com.github.nhirakawa.MathUtils.fibonacci;
 
 import java.math.BigInteger;
 
