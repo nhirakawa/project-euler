@@ -95,6 +95,11 @@ public class ProblemTest {
   }
 
   @Test
+  public void testProblem19() {
+    testProblem(new Problem19(), new Answer<>(171));
+  }
+
+  @Test
   public void testProblem20() {
     testProblem(new Problem20(), new Answer<>(648L));
   }
