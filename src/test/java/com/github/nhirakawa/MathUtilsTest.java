@@ -1,5 +1,6 @@
 package com.github.nhirakawa;
 
+import static com.github.nhirakawa.problems.MathUtils.fibonacci;
 import static com.github.nhirakawa.problems.MathUtils.getFactors;
 import static com.github.nhirakawa.problems.MathUtils.isPrime;
 import static com.github.nhirakawa.problems.MathUtils.max;
@@ -9,6 +10,7 @@ import static com.github.nhirakawa.problems.MathUtils.sum;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertFalse;
 
+import java.math.BigInteger;
 import java.util.Collections;
 
 import org.junit.Test;
@@ -16,6 +18,15 @@ import org.junit.Test;
 import com.google.common.collect.Lists;
 
 public class MathUtilsTest {
+
+  @Test
+  public void testFibonacci() {
+    assertThat(fibonacci(0)).isEqualTo(BigInteger.valueOf(1));
+    assertThat(fibonacci(1)).isEqualTo(BigInteger.valueOf(1));
+    assertThat(fibonacci(2)).isEqualTo(BigInteger.valueOf(2));
+    assertThat(fibonacci(3)).isEqualTo(BigInteger.valueOf(3));
+    assertThat(fibonacci(4)).isEqualTo(BigInteger.valueOf(5));
+  }
 
   @Test
   public void testSquare() {

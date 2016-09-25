@@ -1,5 +1,6 @@
 package com.github.nhirakawa.problems;
 
+import java.math.BigInteger;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -9,19 +10,19 @@ import java.util.stream.LongStream;
 
 public class MathUtils {
 
-  private static final Map<Long, Long> FIBONACCI_MEMO = new HashMap<>();
+  private static final Map<Long, BigInteger> FIBONACCI_MEMO = new HashMap<>();
 
   private MathUtils() {
   }
 
-  public static long fibonacci(long n) {
-    if (n < 1) {
-      throw new IllegalArgumentException(String.format("%d is less than 1", n));
+  public static BigInteger fibonacci(long n) {
+    if (n < 0) {
+      throw new IllegalArgumentException(String.format("%d is less than 0", n));
     }
-    if (n == 1 || n == 2) {
-      return n;
+    if (n == 0 || n == 1) {
+      return BigInteger.ONE;
     }
-    return FIBONACCI_MEMO.computeIfAbsent(n, integer -> fibonacci(n - 1) + fibonacci(n - 2));
+    return FIBONACCI_MEMO.computeIfAbsent(n, integer -> fibonacci(n - 1).add(fibonacci(n - 2)));
   }
 
   public static boolean isPrime(long n) {
