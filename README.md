@@ -12,6 +12,7 @@ The solutions are not meant to be as (mathematically) efficient as possible, tho
 - 6
 - 7
 - 8
+- 9
 - 10
 - 12
 - 13

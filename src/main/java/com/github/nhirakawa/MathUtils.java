@@ -102,4 +102,8 @@ public class MathUtils {
     return stream.reduce(1L, (a, b) -> a * b);
   }
 
+  public static boolean isPythagorean(long a, long b, long c) {
+    return !(a == 0 || b == 0 || c == 0) && square(a) + square(b) == square(c);
+  }
+
 }

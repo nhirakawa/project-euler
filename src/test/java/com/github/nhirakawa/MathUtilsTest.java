@@ -3,6 +3,7 @@ package com.github.nhirakawa;
 import static com.github.nhirakawa.MathUtils.fibonacci;
 import static com.github.nhirakawa.MathUtils.getFactors;
 import static com.github.nhirakawa.MathUtils.isPrime;
+import static com.github.nhirakawa.MathUtils.isPythagorean;
 import static com.github.nhirakawa.MathUtils.max;
 import static com.github.nhirakawa.MathUtils.product;
 import static com.github.nhirakawa.MathUtils.square;
@@ -95,5 +96,13 @@ public class MathUtilsTest {
     assertThat(product(-1, 1)).isEqualTo(-1);
 
     assertThat(product(Lists.newArrayList(1L, 2L, 3L))).isEqualTo(6);
+  }
+
+  @Test
+  public void testIsPythagorean() {
+    assertThat(isPythagorean(3, 4, 5)).isTrue();
+    assertThat(isPythagorean(1, 2, 3)).isFalse();
+    assertThat(isPythagorean(0, 0, 0)).isFalse();
+    assertThat(isPythagorean(5, 12, 13)).isTrue();
   }
 }
