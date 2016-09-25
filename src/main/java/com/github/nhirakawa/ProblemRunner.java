@@ -1,9 +1,10 @@
 package com.github.nhirakawa;
 
-import java.util.HashMap;
+import java.util.Comparator;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
+import java.util.TreeMap;
 
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
@@ -13,6 +14,7 @@ import org.apache.commons.cli.Option;
 import org.apache.commons.cli.Options;
 import org.reflections.Reflections;
 
+import com.google.common.collect.ComparisonChain;
 import com.google.inject.Guice;
 import com.google.inject.Key;
 
@@ -69,7 +71,7 @@ public class ProblemRunner {
   }
 
   private static Map<String, Key<? extends Problem>> getInjectables() {
-    Map<String, Key<? extends Problem>> injectables = new HashMap();
+    Map<String, Key<? extends Problem>> injectables = new TreeMap<>(new NaturalStringComparator());
     Reflections reflections = new Reflections("com.github.nhirakawa.problems");
     Set<Class<? extends Problem>> problems = reflections.getSubTypesOf(Problem.class);
     for (Class<? extends Problem> c : problems) {
@@ -80,5 +82,16 @@ public class ProblemRunner {
 
   public static void main(String... args) throws Exception {
     new ProblemRunner().run(args);
+  }
+
+  private static class NaturalStringComparator implements Comparator<String> {
+
+    @Override
+    public int compare(String o1, String o2) {
+      return ComparisonChain.start()
+          .compare(o1.length(), o2.length())
+          .compare(o1, o2)
+          .result();
+    }
   }
 }
