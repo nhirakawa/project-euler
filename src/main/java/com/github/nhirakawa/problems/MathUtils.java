@@ -1,9 +1,11 @@
 package com.github.nhirakawa.problems;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.LongStream;
 
 public class MathUtils {
 
@@ -60,7 +62,43 @@ public class MathUtils {
   }
 
   public static long square(long num) {
-    return (long) Math.pow(num, 2);
+    return num * num;
+  }
+
+  public static long max(long... numbers) {
+    return max(LongStream.of(numbers));
+  }
+
+  public static long max(Collection<Long> numbers) {
+    return max(numbers.stream().mapToLong(Long::new));
+  }
+
+  public static long max(LongStream stream) {
+    return stream.reduce(Long.MIN_VALUE, Math::max);
+  }
+
+  public static long sum(long... numbers) {
+    return sum(LongStream.of(numbers));
+  }
+
+  public static long sum(Collection<Long> numbers) {
+    return sum(numbers.stream().mapToLong(Long::new));
+  }
+
+  private static long sum(LongStream stream) {
+    return stream.sum();
+  }
+
+  public static long product(long... numbers) {
+    return product(LongStream.of(numbers));
+  }
+
+  public static long product(Collection<Long> numbers) {
+    return product(numbers.stream().mapToLong(Long::new));
+  }
+
+  public static long product(LongStream stream) {
+    return stream.reduce(1L, (a, b) -> a * b);
   }
 
 }

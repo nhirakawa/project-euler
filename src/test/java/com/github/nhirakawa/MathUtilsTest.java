@@ -2,12 +2,18 @@ package com.github.nhirakawa;
 
 import static com.github.nhirakawa.problems.MathUtils.getFactors;
 import static com.github.nhirakawa.problems.MathUtils.isPrime;
+import static com.github.nhirakawa.problems.MathUtils.max;
+import static com.github.nhirakawa.problems.MathUtils.product;
 import static com.github.nhirakawa.problems.MathUtils.square;
+import static com.github.nhirakawa.problems.MathUtils.sum;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+
+import java.util.Collections;
 
 import org.junit.Test;
+
+import com.google.common.collect.Lists;
 
 public class MathUtilsTest {
 
@@ -27,11 +33,56 @@ public class MathUtilsTest {
     assertThat(getFactors(24)).contains(1L, 2L, 3L, 4L, 6L, 8L, 12L, 24L);
   }
 
+  @Test(expected = IllegalArgumentException.class)
+  public void testGetFactorsException() {
+    getFactors(0);
+  }
+
   @Test
   public void testIsPrime() {
-    assertTrue(isPrime(2));
-    assertTrue(isPrime(19));
+    assertThat(isPrime(2)).isTrue();
+    assertThat(isPrime(19)).isTrue();
     assertFalse(isPrime(25));
-    assertFalse(isPrime(300));
+    assertThat(isPrime(25)).isFalse();
+    assertThat(isPrime(300)).isFalse();
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testIsPrimeException() {
+    isPrime(-1);
+  }
+
+  @Test
+  public void testMax() {
+    assertThat(max(1, 2, 3)).isEqualTo(3);
+    assertThat(max(2)).isEqualTo(2);
+    assertThat(max(0)).isEqualTo(0);
+
+    assertThat(max(Collections.emptyList())).isEqualTo(Long.MIN_VALUE);
+    assertThat(max(Lists.newArrayList(1L))).isEqualTo(1);
+    assertThat(max(Lists.newArrayList(1L, 2L, 3L))).isEqualTo(3);
+  }
+
+  @Test
+  public void testSum() {
+    assertThat(sum()).isEqualTo(0);
+    assertThat(sum(1, 2, 3)).isEqualTo(6);
+    assertThat(sum(1)).isEqualTo(1);
+
+    assertThat(sum(Lists.newArrayList())).isEqualTo(0);
+    assertThat(sum(Lists.newArrayList(1L, 2L, 3L))).isEqualTo(6);
+    assertThat(sum(Lists.newArrayList(1L))).isEqualTo(1);
+
+    assertThat(sum(-1, 1)).isEqualTo(0);
+  }
+
+  @Test
+  public void testProduct() {
+    assertThat(product(1, 2)).isEqualTo(2);
+    assertThat(product()).isEqualTo(1);
+
+    assertThat(product(-1, 1)).isEqualTo(-1);
+
+    assertThat(product(Lists.newArrayList(1L, 2L, 3L))).isEqualTo(6);
   }
 }
