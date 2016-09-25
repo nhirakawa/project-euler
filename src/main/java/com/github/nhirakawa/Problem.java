@@ -13,10 +13,12 @@ public abstract class Problem {
   protected final List<String> resource;
 
   public Problem() {
-    URL url = Resources.getResource(String.format("%s.txt", getClass().getSimpleName().toLowerCase()));
     List<String> list = Collections.emptyList();
     try {
+      URL url = Resources.getResource(String.format("%s.txt", getClass().getSimpleName().toLowerCase()));
       list = Resources.readLines(url, Charset.defaultCharset());
+    } catch (IllegalArgumentException e){
+      // do nothing
     } catch (IOException e) {
       e.printStackTrace();
     } finally {
