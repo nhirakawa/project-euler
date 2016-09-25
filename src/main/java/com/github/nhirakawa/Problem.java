@@ -10,16 +10,17 @@ import com.google.common.io.Resources;
 
 public abstract class Problem {
 
-  protected List<String> resource;
+  protected final List<String> resource;
 
   public Problem() {
+    URL url = Resources.getResource(String.format("%s.txt", getClass().getSimpleName().toLowerCase()));
+    List<String> list = Collections.emptyList();
     try {
-      URL url = Resources.getResource(String.format("%s.txt", getClass().getSimpleName().toLowerCase()));
-      resource = Resources.readLines(url, Charset.defaultCharset());
-    } catch (IllegalArgumentException e) {
-      resource = Collections.emptyList();
+      list = Resources.readLines(url, Charset.defaultCharset());
     } catch (IOException e) {
       e.printStackTrace();
+    } finally {
+      resource = list;
     }
   }
 
