@@ -2,19 +2,10 @@ package com.github.nhirakawa.problems;
 
 import static com.github.nhirakawa.problems.MathUtils.fibonacci;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import com.github.nhirakawa.Answer;
 import com.github.nhirakawa.Problem;
 
 public class Problem2 extends Problem {
-
-  private final Map<Integer, Long> memo;
-
-  public Problem2() {
-    this.memo = new HashMap<>();
-  }
 
   @Override
   public Answer solve() {
