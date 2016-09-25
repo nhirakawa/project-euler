@@ -6,7 +6,7 @@ import com.github.nhirakawa.Answer;
 import com.github.nhirakawa.Problem;
 import com.github.nhirakawa.problems.MathUtils;
 
-public class Problem5 implements Problem {
+public class Problem5 extends Problem {
 
   @Override
   public Answer solve() {

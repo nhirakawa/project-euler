@@ -5,7 +5,7 @@ import static com.github.nhirakawa.problems.MathUtils.isPrime;
 import com.github.nhirakawa.Answer;
 import com.github.nhirakawa.Problem;
 
-public class Problem7 implements Problem {
+public class Problem7 extends Problem {
 
   @Override
   public Answer solve() {

@@ -8,7 +8,7 @@ import java.util.Map;
 import com.github.nhirakawa.Answer;
 import com.github.nhirakawa.Problem;
 
-public class Problem2 implements Problem {
+public class Problem2 extends Problem {
 
   private final Map<Integer, Long> memo;
 

@@ -3,7 +3,7 @@ package com.github.nhirakawa.problems.problem14;
 import com.github.nhirakawa.Answer;
 import com.github.nhirakawa.Problem;
 
-public class Problem14 implements Problem {
+public class Problem14 extends Problem {
 
   @Override
   public Answer solve() {

@@ -5,7 +5,7 @@ import static com.github.nhirakawa.problems.MathUtils.square;
 import com.github.nhirakawa.Answer;
 import com.github.nhirakawa.Problem;
 
-public class Problem28 implements Problem {
+public class Problem28 extends Problem {
 
   @Override
   public Answer solve() {
