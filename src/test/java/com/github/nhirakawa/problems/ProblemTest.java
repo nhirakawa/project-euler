@@ -83,6 +83,11 @@ public class ProblemTest {
   }
 
   @Test
+  public void testProblem18() {
+    testProblem(new Problem18(), new Answer<>(1074L));
+  }
+
+  @Test
   public void testProblem20() {
     testProblem(new Problem20(), new Answer<>(648L));
   }
