@@ -15,6 +15,7 @@ The solutions are not meant to be as (mathematically) efficient as possible, tho
 - 10
 - 12
 - 14
+- 16
 - 28
 
 ## In Progress
