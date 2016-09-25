@@ -3,6 +3,7 @@ package com.github.nhirakawa.problems;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.FixMethodOrder;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
@@ -58,6 +59,7 @@ public class ProblemTest {
   }
 
   @Test
+  @Ignore
   public void testProblem11() {
     testProblem(new Problem11(), new Answer<>(70600674L));
   }
@@ -93,6 +95,7 @@ public class ProblemTest {
   }
 
   @Test
+  @Ignore
   public void testProblem21() {
     testProblem(new Problem21(), new Answer<>(31626L));
   }
