@@ -19,6 +19,7 @@ The solutions are not meant to be as (mathematically) efficient as possible, tho
 
 ## In Progress
 - 11
+- 21
 
 ## How to run
 ```
