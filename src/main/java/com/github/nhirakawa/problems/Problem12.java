@@ -1,6 +1,6 @@
 package com.github.nhirakawa.problems;
 
-import static com.github.nhirakawa.MathUtils.getFactors;
+import static com.github.nhirakawa.MathUtils.getDivisors;
 
 import com.github.nhirakawa.Answer;
 import com.github.nhirakawa.Problem;
@@ -11,7 +11,7 @@ public class Problem12 extends Problem {
   public Answer solve() {
     long index = 1;
     long triangle = 1;
-    while (getFactors(triangle).size() < 500) {
+    while (getDivisors(triangle).size() < 500) {
       index++;
       triangle += index;
     }

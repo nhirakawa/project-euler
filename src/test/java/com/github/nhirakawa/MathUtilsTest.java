@@ -1,7 +1,11 @@
 package com.github.nhirakawa;
 
 import static com.github.nhirakawa.MathUtils.fibonacci;
-import static com.github.nhirakawa.MathUtils.getFactors;
+import static com.github.nhirakawa.MathUtils.getDivisors;
+import static com.github.nhirakawa.MathUtils.getProperDivisors;
+import static com.github.nhirakawa.MathUtils.isAbundant;
+import static com.github.nhirakawa.MathUtils.isDeficient;
+import static com.github.nhirakawa.MathUtils.isPerfect;
 import static com.github.nhirakawa.MathUtils.isPrime;
 import static com.github.nhirakawa.MathUtils.isPythagorean;
 import static com.github.nhirakawa.MathUtils.max;
@@ -38,16 +42,23 @@ public class MathUtilsTest {
   }
 
   @Test
-  public void testGetFactors() {
-    assertThat(getFactors(2)).contains(1L, 2L);
-    assertThat(getFactors(25)).contains(1L, 5L, 25L);
-    assertThat(getFactors(19)).contains(1L, 19L);
-    assertThat(getFactors(24)).contains(1L, 2L, 3L, 4L, 6L, 8L, 12L, 24L);
+  public void testGetDivisors() {
+    assertThat(getDivisors(2)).contains(1L, 2L);
+    assertThat(getDivisors(25)).contains(1L, 5L, 25L);
+    assertThat(getDivisors(19)).contains(1L, 19L);
+    assertThat(getDivisors(24)).contains(1L, 2L, 3L, 4L, 6L, 8L, 12L, 24L);
+  }
+
+  @Test
+  public void testGetProperDivisors() {
+    assertThat(getProperDivisors(4)).contains(1L, 2L);
+    assertThat(getProperDivisors(9)).contains(1L, 3L);
+    assertThat(getProperDivisors(13L)).containsExactly(1L);
   }
 
   @Test(expected = IllegalArgumentException.class)
   public void testGetFactorsException() {
-    getFactors(0);
+    getDivisors(0);
   }
 
   @Test
@@ -104,5 +115,23 @@ public class MathUtilsTest {
     assertThat(isPythagorean(1, 2, 3)).isFalse();
     assertThat(isPythagorean(0, 0, 0)).isFalse();
     assertThat(isPythagorean(5, 12, 13)).isTrue();
+  }
+
+  @Test
+  public void testIsPerfect() {
+    assertThat(isPerfect(28)).isTrue();
+    assertThat(isPerfect(27)).isFalse();
+  }
+
+  @Test
+  public void testIsDeficient() {
+    assertThat(isDeficient(28)).isFalse();
+    assertThat(isDeficient(2)).isTrue();
+  }
+
+  @Test
+  public void testIsAbundant() {
+    assertThat(isAbundant(12)).isTrue();
+    assertThat(isAbundant(28)).isFalse();
   }
 }

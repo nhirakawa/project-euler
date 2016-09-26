@@ -46,7 +46,7 @@ public class MathUtils {
     return true;
   }
 
-  public static Set<Long> getFactors(long n) {
+  public static Set<Long> getDivisors(long n) {
     if (n < 1) {
       throw new IllegalArgumentException(String.format("%d is less than 1", n));
     }
@@ -60,6 +60,12 @@ public class MathUtils {
       }
     }
     return factors;
+  }
+
+  public static Set<Long> getProperDivisors(long n) {
+    Set<Long> allDivisors = getDivisors(n);
+    allDivisors.remove(n);
+    return allDivisors;
   }
 
   public static long square(long num) {
@@ -104,6 +110,18 @@ public class MathUtils {
 
   public static boolean isPythagorean(long a, long b, long c) {
     return !(a == 0 || b == 0 || c == 0) && square(a) + square(b) == square(c);
+  }
+
+  public static boolean isPerfect(long n) {
+    return sum(getProperDivisors(n)) == n;
+  }
+
+  public static boolean isAbundant(long n) {
+    return sum(getProperDivisors(n)) > n;
+  }
+
+  public static boolean isDeficient(long n) {
+    return sum(getProperDivisors(n)) < n;
   }
 
 }

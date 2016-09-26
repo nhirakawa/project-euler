@@ -1,9 +1,8 @@
 package com.github.nhirakawa.problems;
 
-import static com.github.nhirakawa.MathUtils.getFactors;
+import static com.github.nhirakawa.MathUtils.getProperDivisors;
 import static com.github.nhirakawa.MathUtils.sum;
 
-import java.util.Collection;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -36,11 +35,5 @@ public class Problem21 extends Problem {
       }
     }
     return new Answer<>(sum(amicableNumbers));
-  }
-
-  private static Collection<Long> getProperDivisors(long l) {
-    Set<Long> factors = getFactors(l);
-    factors.remove(l);
-    return factors;
   }
 }
