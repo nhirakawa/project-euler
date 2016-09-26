@@ -115,6 +115,11 @@ public class ProblemTest {
   }
 
   @Test
+  public void testProblem23() {
+    testProblem(new Problem23(), new Answer<>(4179871L));
+  }
+
+  @Test
   public void testProblem25() {
     testProblem(new Problem25(), new Answer<>(4782L));
   }
