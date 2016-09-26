@@ -25,6 +25,7 @@ The solutions are not meant to be as (mathematically) efficient as possible, tho
 - 22
 - 23
 - 25
+- 27
 - 28
 - 67
 

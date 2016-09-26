@@ -125,6 +125,11 @@ public class ProblemTest {
   }
 
   @Test
+  public void testProblem27(){
+    testProblem(new Problem27(), new Answer<>(-59231L));
+  }
+
+  @Test
   public void testProblem28() {
     testProblem(new Problem28(), new Answer<>(669171001L));
   }
